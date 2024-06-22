@@ -8,10 +8,12 @@ import {
 
 import './index.css';
 
+import Root from "./routes/root";
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello World!</div>,
+    element: <Root />,
   },
 ]);
 

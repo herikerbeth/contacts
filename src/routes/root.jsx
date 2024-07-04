@@ -7,6 +7,7 @@ import {
     Form,
     redirect,
     useNavigation,
+    useSubmit,
 } from "react-router-dom";
 import { getContacts, createContact } from "../contacts";
 
@@ -26,6 +27,7 @@ export default function Root() {
     const { contacts, q } = useLoaderData();
     const [query, setQuery] = useState(q);
     const navigation = useNavigation();
+    const submit = useSubmit();
 
     useEffect(() => {
         setQuery(q);
@@ -45,7 +47,7 @@ export default function Root() {
                           name="q"
                           value={query}
                           onChange={(e) => {
-                            setQuery(e.target.value);
+                            submit(e.target.form);
                           }}
                         />
                         <div 
